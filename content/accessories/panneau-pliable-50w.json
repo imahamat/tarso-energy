@@ -1,0 +1,11 @@
+{
+  "name": "Panneau Solaire Pliable 50W",
+  "slug": "panneau-pliable-50w",
+  "category": "panneau",
+  "in_stock": true,
+  "price": 13500,
+  "price_display": "13 500 FCFA",
+  "features": ["Pliable et portable", "Compatible stations portables", "Connecteurs universels"],
+  "image": "",
+  "description": "Panneau solaire pliable 50W. Léger et portable. Idéal pour recharger les stations portables en déplacement."
+}

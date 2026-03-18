@@ -1,0 +1,19 @@
+{
+  "name": "Eudemon — Zapper Électrique",
+  "slug": "eudemon-gh-18nl",
+  "model": "GH-18NL",
+  "category": "electrique",
+  "in_stock": true,
+  "price": 13000,
+  "price_display": "13 000 FCFA",
+  "power_source": "Secteur",
+  "method": "Grille galvanisée",
+  "waterproof": "IP24",
+  "coverage": "200m²",
+  "autonomy": "Illimitée (secteur)",
+  "features": ["UV-A LED", "Grille galvanisée", "IP24", "Bac de collecte", "ABS ignifuge"],
+  "badge": "LE PLUS ABORDABLE",
+  "quantity": 54,
+  "image": "",
+  "description": "Tue-moustiques électrique abordable. Grille galvanisée haute tension. Couverture 200m². Branchez et oubliez."
+}

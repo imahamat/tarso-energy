@@ -1,0 +1,11 @@
+{
+  "name": "Panneau Solaire 200W",
+  "slug": "panneau-solaire-200w",
+  "category": "panneau",
+  "in_stock": true,
+  "price": 44500,
+  "price_display": "44 500 FCFA",
+  "features": ["Monocristallin", "Compatible stations portables", "Haute efficacité"],
+  "image": "",
+  "description": "Panneau solaire 200W monocristallin. Pour recharger les stations portables ou comme panneau d'appoint."
+}

@@ -1,0 +1,6 @@
+# Netlify redirects
+/accueil    /index.html    200
+/produits   /systemes-solaires.html    302
+/solar      /systemes-solaires.html    302
+/gleecon    /anti-insectes.html    302
+/contact    /a-propos.html    302

@@ -1,0 +1,18 @@
+{
+  "name": "Kit Solaire 20.48 KWH / 12KW 48V",
+  "slug": "kit-20kwh-12kw",
+  "category": "villa",
+  "in_stock": false,
+  "price": 4300000,
+  "price_display": "~4 300 000 FCFA",
+  "inverter": "12KW 48V IP54 avec MPPT intégré",
+  "battery": "2x LiFePO4 51.2V 200AH / 20.48 KWH",
+  "battery_warranty": "5 ans, 6 000 cycles",
+  "panels": "16x 620W monocristallins HPBC (9 920W total)",
+  "panels_warranty": "12 ans",
+  "charge_time": "3-4 heures de soleil",
+  "powers": ["20 lampes LED", "2 réfrigérateurs", "2 TV", "4 ventilateurs", "2 climatiseurs", "2 ordinateurs"],
+  "includes": ["Onduleur 12KW avec MPPT intégré", "2x Batterie LiFePO4 Classe A", "16 panneaux solaires 620W", "200m câble solaire 4mm²", "Combiner box + disjoncteurs", "Supports aluminium 3m", "Emballage caisse en bois"],
+  "image": "",
+  "description": "20 KWH de stockage avec 16 panneaux. Pour les villas et grandes résidences."
+}

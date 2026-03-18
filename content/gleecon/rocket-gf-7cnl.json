@@ -1,0 +1,19 @@
+{
+  "name": "Rocket — Aspirateur Silencieux",
+  "slug": "rocket-gf-7cnl",
+  "model": "GF-7CNL",
+  "category": "electrique",
+  "in_stock": true,
+  "price": 23500,
+  "price_display": "23 500 FCFA",
+  "power_source": "Secteur",
+  "method": "Ventilateur DC (aspiration, pas de zapping)",
+  "waterproof": "IPX4",
+  "coverage": "100m²",
+  "autonomy": "Illimitée (secteur)",
+  "features": ["UV-A LED", "Ventilateur DC silencieux", "IPX4", "Pas de zapping", "Bac de collecte", "ABS ignifuge"],
+  "badge": "SILENCIEUX",
+  "quantity": 54,
+  "image": "",
+  "description": "Anti-moustiques silencieux par aspiration. Ventilateur DC attire et piège les insectes. Idéal pour les chambres."
+}
