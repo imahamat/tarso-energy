@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -218,24 +217,3 @@
 
 <script src="assets/js/main.js"></script>
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  loadProducts('solar-systems', [
-    'kit-2-56kwh-3kw.json', 'kit-5-12kwh-3kw.json', 'kit-7-68kwh-4kw.json',
-    'kit-7-68kwh-6kw.json', 'kit-10kwh-6kw.json', 'kit-10kwh-12kw.json',
-    'kit-15kwh-12kw.json', 'kit-20kwh-12kw.json', 'kit-30kwh-12kw.json'
-  ], 'solarProducts');
-});
-</script>
-</body>
-</html>

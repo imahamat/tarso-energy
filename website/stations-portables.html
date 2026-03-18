@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -122,26 +121,3 @@
 
 <script src="assets/js/main.js"></script>
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  loadProducts('portable-stations', [
-    'station-100w.json', 'station-200w.json', 'station-1kw-tout-en-un.json'
-  ], 'stationsProducts');
-  loadProducts('accessories', [
-    'panneau-pliable-50w.json', 'panneau-solaire-200w.json',
-    'jump-starter-12v.json', 'jump-starter-12-24v.json', 'jump-starter-pro.json'
-  ], 'accessoriesProducts');
-});
-</script>
-</body>
-</html>
