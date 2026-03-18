@@ -1,0 +1,18 @@
+{
+  "name": "Kit Solaire 2.56 KWH / 3KW 24V",
+  "slug": "kit-2-56kwh-3kw",
+  "category": "petite",
+  "in_stock": true,
+  "price": 1326000,
+  "price_display": "1 326 000 FCFA",
+  "inverter": "3KW 24V IP54 avec MPPT intégré",
+  "battery": "LiFePO4 25.6V 100AH / 2.56 KWH",
+  "battery_warranty": "5 ans, 6 000 cycles",
+  "panels": "2x 620W monocristallins HPBC (1 240W total)",
+  "panels_warranty": "12 ans",
+  "charge_time": "3-4 heures de soleil",
+  "powers": ["6 lampes LED", "1 réfrigérateur", "1 TV", "1 ventilateur", "1 ordinateur"],
+  "includes": ["Onduleur 3KW avec MPPT intégré", "Batterie LiFePO4 Classe A", "2 panneaux solaires 620W", "200m câble solaire 4mm²", "Combiner box + disjoncteurs", "Supports aluminium 3m", "Emballage caisse en bois"],
+  "image": "",
+  "description": "Notre kit le plus accessible. Système complet pour une petite maison. Tout inclus, prêt à installer."
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Station Portable 200W",
+  "slug": "station-200w",
+  "category": "portable",
+  "in_stock": true,
+  "price": 63000,
+  "price_display": "63 000 FCFA",
+  "power": "200W",
+  "battery_capacity": "175.2WH",
+  "features": ["Compact et léger", "Sorties USB et AC", "Rechargeable solaire"],
+  "image": "",
+  "description": "Station portable 200W avec batterie 175.2WH. Pour téléphones, laptops et appareils moyens."
+}

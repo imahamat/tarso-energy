@@ -1,0 +1,19 @@
+{
+  "name": "CamZap — Zapper Rechargeable",
+  "slug": "camzap-gh-7dc",
+  "model": "GH-7DC",
+  "category": "rechargeable",
+  "in_stock": true,
+  "price": 15000,
+  "price_display": "15 000 FCFA",
+  "power_source": "USB-C rechargeable",
+  "method": "Grille électrique",
+  "waterproof": "IP24",
+  "coverage": "80m²",
+  "autonomy": "14-16 heures (5000mAh)",
+  "features": ["UV-A LED", "Rechargeable USB-C", "Étanche IP24", "Bac de collecte", "ABS ignifuge"],
+  "badge": "BEST-SELLER",
+  "quantity": 56,
+  "image": "",
+  "description": "Tue-moustiques rechargeable compact. Lumière UV attire, grille élimine. Zéro chimique."
+}

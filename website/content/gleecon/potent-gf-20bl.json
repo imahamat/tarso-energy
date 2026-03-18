@@ -1,0 +1,19 @@
+{
+  "name": "Potent — Double UV + Ventilateur",
+  "slug": "potent-gf-20bl",
+  "model": "GF-20BL",
+  "category": "electrique",
+  "in_stock": true,
+  "price": 60000,
+  "price_display": "60 000 FCFA",
+  "power_source": "Secteur",
+  "method": "Double UV + grand ventilateur",
+  "waterproof": "IPX4",
+  "coverage": "200m²",
+  "autonomy": "Illimitée (secteur)",
+  "features": ["Double UV-A LED", "Grand ventilateur puissant", "IPX4", "Couverture 200m²", "Bac de collecte XL", "ABS ignifuge"],
+  "badge": "LE PLUS PUISSANT",
+  "quantity": 50,
+  "image": "",
+  "description": "Le plus puissant de la gamme. Double UV et grand ventilateur pour une couverture maximale de 200m²."
+}
