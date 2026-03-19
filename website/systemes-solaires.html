@@ -3,217 +3,303 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1B2A4A">
   <title>Systèmes Solaires Complets PROTON — TARSO ENERGY</title>
-  <meta name="description" content="Kits solaires complets PROTON de 2.56 KWH à 30 KWH. Batteries LiFePO4 Classe A, panneaux 620W, onduleur MPPT. Prix en FCFA. Livraison N'Djamena.">
+  <meta name="description" content="Kits solaires complets PROTON de 2.56 KWH à 30 KWH. Onduleur MPPT, batterie LiFePO4 Classe A, panneaux 620W. Tout inclus. Prix en FCFA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/images/logo-icon.jpeg" alt="Tarso Energy" style="height:40px;border-radius:4px;margin-right:8px;">
-      TARSO<span style="color:#E8751A;margin-left:4px;">ENERGY</span>
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="systemes-solaires.html" class="active">Systèmes Solaires</a></li>
-      <li><a href="stations-portables.html">Stations & Accessoires</a></li>
-      <li><a href="anti-insectes.html">Anti-Insectes</a></li>
-      <li><a href="a-propos.html">À Propos</a></li>
-      <li><a href="https://wa.me/23562390888" class="nav-cta" target="_blank">WhatsApp</a></li>
-    </ul>
-  </div>
-</nav>
-<div class="nav-overlay" id="navOverlay"></div>
+  <!-- Promo Banner -->
+  <div id="promoBanner" class="promo-banner" style="display:none;"></div>
 
-<!-- Page Header -->
-<section class="page-header">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="index.html">Accueil</a> / <span>Systèmes Solaires</span>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo-icon.jpeg" alt="Tarso Energy">
+        <span class="logo-text">TARSO<span class="logo-accent">ENERGY</span></span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="systemes-solaires.html" class="active">Systèmes Solaires</a></li>
+        <li><a href="stations-portables.html">Stations & Accessoires</a></li>
+        <li><a href="anti-insectes.html">Anti-Insectes</a></li>
+        <li><a href="a-propos.html">À Propos</a></li>
+        <li><a href="https://wa.me/23562390888" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
     </div>
-    <h1>Systèmes Solaires Complets PROTON</h1>
-    <p class="page-subtitle">Kits complets prêts à installer : onduleur MPPT, batteries LiFePO4 Classe A, panneaux monocristallins 620W, câbles, supports et protections. Du petit foyer à la villa.</p>
-  </div>
-</section>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
 
-<!-- Filter Tabs -->
-<section class="section">
-  <div class="container">
-    <div class="filter-tabs" id="filterTabs">
-      <button class="filter-tab active" data-filter="all">Tous</button>
-      <button class="filter-tab" data-filter="petite">Petite Maison</button>
-      <button class="filter-tab" data-filter="moyenne">Maison Moyenne</button>
-      <button class="filter-tab" data-filter="grande">Grande Maison</button>
-      <button class="filter-tab" data-filter="villa">Villa / Commerce</button>
-    </div>
+  <main>
 
-    <!-- Products Grid -->
-    <div id="solarProducts" class="products-grid"></div>
-  </div>
-</section>
+    <!-- ===================== PAGE HEADER ===================== -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Systèmes Solaires</span>
+        </nav>
+        <h1>Systèmes Solaires Complets PROTON</h1>
+        <p class="page-header-subtitle">Chaque kit contient tout : onduleur MPPT, batterie LiFePO4 Classe A, panneaux 620W, câbles, disjoncteurs et supports.</p>
+      </div>
+    </section>
 
-<!-- Calculez vos besoins -->
-<section class="section section-alt">
-  <div class="container">
-    <h2 class="section-title">Calculez vos besoins</h2>
-    <p style="text-align:center;max-width:700px;margin:0 auto 2rem;">Exemple concret : M. Seth veut alimenter toute sa maison au solaire. Voici son calcul :</p>
-    <div class="calc-example">
-      <table class="calc-table">
-        <thead>
-          <tr>
-            <th>Appareil</th>
-            <th>Quantité</th>
-            <th>Puissance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Ampoules LED</td><td>20</td><td>400W</td></tr>
-          <tr><td>Ventilateurs</td><td>6</td><td>480W</td></tr>
-          <tr><td>Téléviseurs</td><td>4</td><td>200W</td></tr>
-          <tr><td>Congélateur</td><td>1</td><td>200W</td></tr>
-          <tr><td>Réfrigérateurs</td><td>2</td><td>240W</td></tr>
-          <tr><td>Fer à repasser</td><td>1</td><td>300W</td></tr>
-          <tr><td>Mixeurs</td><td>2</td><td>200W</td></tr>
-          <tr><td>Climatiseurs</td><td>3</td><td>3 600W</td></tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="2"><strong>Total</strong></td>
-            <td><strong>5 620W</strong></td>
-          </tr>
-        </tfoot>
-      </table>
-      <div class="calc-result">
-        <p>Consommation estimée : <strong>~45 890 WH/jour</strong></p>
-        <p>Système recommandé : <strong>Kit 20 KWH ou 30 KWH</strong></p>
-        <p><a href="https://wa.me/23562390888?text=Je%20voudrais%20un%20calcul%20personnalisé%20pour%20mes%20besoins%20solaires" class="btn btn-gold" target="_blank">Calculez mes besoins gratuitement</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tous nos kits incluent -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Tous nos kits incluent</h2>
-    <div class="includes-grid">
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>Onduleur avec MPPT intégré</span>
-      </div>
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>Batteries LiFePO4 Classe A</span>
-      </div>
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>Panneaux solaires 620W monocristallins HPBC</span>
-      </div>
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>200m câble solaire 4mm²</span>
-      </div>
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>Combiner box + disjoncteurs</span>
-      </div>
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>Supports aluminium 3m</span>
-      </div>
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>Emballage caisse en bois</span>
-      </div>
-      <div class="include-item">
-        <span class="checkmark">&#10003;</span>
-        <span>Garantie 5 ans batteries, 12 ans panneaux</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Selling Points -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="selling-points-grid">
-      <div class="selling-point-box">
-        <h3>MPPT Intégré</h3>
-        <p>Chaque onduleur PROTON embarque un régulateur MPPT. Extraction maximale d'énergie de vos panneaux, même par temps couvert.</p>
-      </div>
-      <div class="selling-point-box">
-        <h3>Classe A</h3>
-        <p>Batteries LiFePO4 neuves, Classe A. Jamais reconditionnées. 6 000 cycles de charge — soit plus de 16 ans d'utilisation quotidienne.</p>
-      </div>
-      <div class="selling-point-box">
-        <h3>Charge 3-4h</h3>
-        <p>Avec les panneaux 620W HPBC et le MPPT, votre batterie se recharge en 3 à 4 heures de soleil. Énergie disponible dès midi.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section cta-section">
-  <div class="container" style="text-align:center;">
-    <h2>Besoin d'aide pour choisir ?</h2>
-    <p>Envoyez-nous la liste de vos appareils sur WhatsApp. On calcule gratuitement le kit adapté.</p>
-    <a href="https://wa.me/23562390888?text=Je%20cherche%20un%20kit%20solaire%20adapté%20à%20mes%20besoins" class="btn btn-gold" target="_blank">Nous contacter sur WhatsApp</a>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>TARSO <span style="color:#E8751A;">ENERGY</span></h4>
-        <p>L'énergie solaire au service du Tchad. Représentant officiel PROTON & GLEECON.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Produits</h4>
-        <ul>
-          <li><a href="systemes-solaires.html">Systèmes Solaires</a></li>
-          <li><a href="stations-portables.html">Stations Portables</a></li>
-          <li><a href="anti-insectes.html">Anti-Insectes GLEECON</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>WhatsApp: +235 62 39 08 88</li>
-          <li>Tél: +235 66 24 55 97</li>
-          <li>Email: contact@tarso.energy</li>
-          <li>Quartier Farcha, N'Djamena</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Suivez-nous</h4>
-        <div class="social-links">
-          <a href="https://www.facebook.com/tarso.energy" target="_blank" aria-label="Facebook">FB</a>
-          <a href="https://www.instagram.com/tarso.energy" target="_blank" aria-label="Instagram">IG</a>
-          <a href="https://www.tiktok.com/@tarso.energy" target="_blank" aria-label="TikTok">TK</a>
+    <!-- ===================== FILTERS ===================== -->
+    <section class="section filters-section">
+      <div class="container">
+        <div class="filter-bar" role="tablist" aria-label="Filtrer par catégorie">
+          <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">Tous</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="petite-maison">Petite Maison</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="maison-moyenne">Maison Moyenne</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="grande-maison">Grande Maison</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="villa-commerce">Villa / Commerce</button>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 TARSO ENERGY. Tous droits réservés. Représentant officiel PROTON & GLEECON au Tchad.</p>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/23562390888" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.291 0-4.405-.763-6.103-2.048l-.427-.322-2.645.887.887-2.645-.322-.427A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
+    <!-- ===================== PRODUCTS GRID ===================== -->
+    <section class="section">
+      <div class="container">
+        <div id="solarProducts" class="products-grid">
+          <!-- Products loaded dynamically via JS -->
+          <div class="skeleton-block"></div>
+          <div class="skeleton-block"></div>
+          <div class="skeleton-block"></div>
+        </div>
+      </div>
+    </section>
 
-<script src="assets/js/main.js"></script>
-<script>
+    <!-- ===================== CALCULEZ VOS BESOINS ===================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Calculez Vos Besoins</h2>
+        <div class="calculator-example">
+          <div class="calculator-header">
+            <h3>La maison de M. Seth</h3>
+          </div>
+          <div class="calculator-body">
+            <div class="appliance-grid">
+              <div class="appliance-item">
+                <span class="appliance-name">20 ampoules</span>
+                <span class="appliance-watts">400W</span>
+              </div>
+              <div class="appliance-item">
+                <span class="appliance-name">6 ventilateurs</span>
+                <span class="appliance-watts">480W</span>
+              </div>
+              <div class="appliance-item">
+                <span class="appliance-name">4 TV</span>
+                <span class="appliance-watts">200W</span>
+              </div>
+              <div class="appliance-item">
+                <span class="appliance-name">1 congélateur</span>
+                <span class="appliance-watts">200W</span>
+              </div>
+              <div class="appliance-item">
+                <span class="appliance-name">2 frigos</span>
+                <span class="appliance-watts">240W</span>
+              </div>
+              <div class="appliance-item">
+                <span class="appliance-name">1 fer à repasser</span>
+                <span class="appliance-watts">300W</span>
+              </div>
+              <div class="appliance-item">
+                <span class="appliance-name">2 mixeurs</span>
+                <span class="appliance-watts">200W</span>
+              </div>
+              <div class="appliance-item">
+                <span class="appliance-name">3 climatiseurs</span>
+                <span class="appliance-watts">3 600W</span>
+              </div>
+            </div>
+            <div class="calculator-result">
+              <div class="result-row">
+                <span>Total puissance</span>
+                <strong>5 620W</strong>
+              </div>
+              <div class="result-row">
+                <span>Consommation / jour</span>
+                <strong>~45 890 WH</strong>
+              </div>
+              <div class="result-row result-highlight">
+                <span>Recommandé</span>
+                <strong>Kit 20 ou 30 KWH</strong>
+              </div>
+            </div>
+          </div>
+          <div class="calculator-cta">
+            <p>Envoyez-nous la liste de vos appareils. On calcule pour vous.</p>
+            <a href="https://wa.me/23562390888?text=Bonjour%2C%20j%27aimerais%20calculer%20mes%20besoins%20en%20%C3%A9nergie%20solaire.%20Voici%20mes%20appareils%20%3A" class="btn btn-accent btn-lg" target="_blank" rel="noopener">Envoyer ma liste sur WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TOUS NOS KITS INCLUENT ===================== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Tous nos kits incluent</h2>
+        <div class="checklist-grid">
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Onduleur PROTON avec MPPT intégré</span>
+          </div>
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Batterie LiFePO4 Classe A neuve</span>
+          </div>
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Panneaux monocristallins 620W HPBC</span>
+          </div>
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Câbles solaires 4mm² (200m)</span>
+          </div>
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Boîtier combinateur et disjoncteurs</span>
+          </div>
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Supports aluminium pour panneaux (3m)</span>
+          </div>
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Interrupteur semi-automatique</span>
+          </div>
+
+          <div class="checklist-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Emballage caisse en bois sécurisé</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3 SELLING POINTS ===================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="selling-points">
+
+          <div class="selling-point">
+            <div class="selling-point-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3>MPPT Intégré</h3>
+            <p>Chaque onduleur PROTON embarque un contrôleur MPPT. Pas besoin d'en acheter un séparément. Vous économisez dès le départ.</p>
+          </div>
+
+          <div class="selling-point">
+            <div class="selling-point-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Classe A</h3>
+            <p>Toutes nos batteries sont neuves, Classe A, LiFePO4 avec 6 000 cycles de charge. Garantie 5 ans. Jamais d'occasion.</p>
+          </div>
+
+          <div class="selling-point">
+            <div class="selling-point-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3>Charge 3-4h</h3>
+            <p>Avec le soleil du Tchad, vos batteries se chargent complètement en 3 à 4 heures. Énergie disponible toute la journée et la nuit.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/logo-icon.jpeg" alt="Tarso Energy">
+            <span>TARSO<span style="color:var(--color-accent)">ENERGY</span></span>
+          </a>
+          <p>L'énergie solaire au service du Tchad. Représentant officiel PROTON New Energy Technology & GLEECON.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Produits</h4>
+          <ul>
+            <li><a href="systemes-solaires.html">Systèmes Solaires</a></li>
+            <li><a href="stations-portables.html">Stations Portables</a></li>
+            <li><a href="anti-insectes.html">Anti-Insectes GLEECON</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://wa.me/23562390888">+235 62 39 08 88</a></li>
+            <li><a href="tel:+23566245597">+235 66 24 55 97</a></li>
+            <li><a href="mailto:contact@tarso.energy">contact@tarso.energy</a></li>
+            <li>Quartier Farcha, N'Djamena</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Suivez-nous</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/tarso.energy" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/tarso.energy" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@tarso.energy" target="_blank" rel="noopener" aria-label="TikTok" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TARSO ENERGY. Tous droits réservés. Représentant officiel PROTON & GLEECON au Tchad.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/23562390888" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.291 0-4.405-.763-6.103-2.048l-.427-.322-2.645.887.887-2.645-.322-.427A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    TarsoEnergy.loadProducts('solar-systems', [
+      'kit-2-56kwh-3kw.json','kit-5-12kwh-3kw.json','kit-7-68kwh-4kw.json',
+      'kit-7-68kwh-6kw.json','kit-10kwh-6kw.json','kit-10kwh-12kw.json',
+      'kit-15kwh-12kw.json','kit-20kwh-12kw.json','kit-30kwh-12kw.json'
+    ], 'solarProducts');
+    TarsoEnergy.loadPromoBanner('promoBanner');
+  });
+  </script>
+
+</body>
+</html>

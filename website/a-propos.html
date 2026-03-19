@@ -4,151 +4,559 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À Propos & Contact — TARSO ENERGY</title>
-  <meta name="description" content="TARSO ENERGY, représentant officiel PROTON et GLEECON au Tchad. Kits solaires, stations portables et anti-moustiques écologiques à N'Djamena.">
+  <meta name="description" content="TARSO ENERGY, représentant officiel PROTON et GLEECON au Tchad. Direct usine, batteries Classe A, support local à N'Djamena. Contactez-nous sur WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ---- About Page Scoped Styles ---- */
+    .ap-header {
+      background: linear-gradient(135deg, #0F1724 0%, #1B2A4A 60%, #243756 100%);
+      padding: 140px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ap-header::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      right: -15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(232,117,26,0.07) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .ap-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+    }
+    .ap-breadcrumb a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .ap-breadcrumb a:hover { color: var(--color-accent); }
+    .ap-breadcrumb .sep { color: rgba(255,255,255,0.25); }
+    .ap-breadcrumb .current { color: var(--color-accent); font-weight: 600; }
+    .ap-header h1 {
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+    .ap-header h1 .accent { color: var(--color-accent); }
+    .ap-header .subtitle {
+      color: rgba(255,255,255,0.7);
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    /* Stats row */
+    .ap-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 44px;
+    }
+    .ap-stat {
+      text-align: center;
+      padding: 28px 16px;
+      border-radius: var(--radius-lg);
+      background: var(--color-white);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .ap-stat:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .ap-stat .num {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .ap-stat .label {
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+      line-height: 1.4;
+    }
+
+    /* Brand sections */
+    .ap-brand {
+      padding: 80px 0;
+    }
+    .ap-brand-proton { background: rgba(27,42,74,0.04); }
+    .ap-brand-gleecon { background: rgba(43,108,176,0.04); }
+    .ap-brand-label {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .ap-brand h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+    .ap-brand-text {
+      max-width: 700px;
+      color: var(--color-gray-500);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+    .ap-brand-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .ap-brand-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      border-left: 4px solid var(--color-accent);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .ap-brand-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .ap-brand-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .ap-brand-card p {
+      font-size: 0.88rem;
+      color: var(--color-gray-500);
+      line-height: 1.6;
+    }
+
+    /* Differentiators */
+    .ap-diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .ap-diff-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 28px 24px;
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--color-accent);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .ap-diff-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .ap-diff-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(232,117,26,0.12), rgba(232,117,26,0.04));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--color-accent);
+    }
+    .ap-diff-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+    }
+    .ap-diff-item p {
+      font-size: 0.88rem;
+      color: var(--color-gray-500);
+      line-height: 1.6;
+    }
+
+    /* Contact split */
+    .ap-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .ap-form {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .ap-form h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 28px;
+    }
+    .ap-form-group {
+      margin-bottom: 20px;
+    }
+    .ap-form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+    }
+    .ap-form-group input,
+    .ap-form-group select,
+    .ap-form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--color-primary);
+      background: var(--color-gray-100);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .ap-form-group input:focus,
+    .ap-form-group select:focus,
+    .ap-form-group textarea:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(232,117,26,0.1);
+      background: #fff;
+    }
+    .ap-form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .ap-form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--color-accent), #F5A623);
+      color: #fff;
+      padding: 14px 36px;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(232,117,26,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      justify-content: center;
+    }
+    .ap-form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(232,117,26,0.4);
+    }
+
+    /* Contact info cards */
+    .ap-info-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .ap-info-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ap-info-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .ap-info-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(27,42,74,0.08), rgba(27,42,74,0.03));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+    }
+    .ap-info-card h4 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .ap-info-card p,
+    .ap-info-card a {
+      font-size: 0.95rem;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .ap-info-card a {
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .ap-info-card a:hover { color: var(--color-accent); }
+    .ap-info-card .social-links {
+      display: flex;
+      gap: 12px;
+    }
+    .ap-info-card .social-links a {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Map placeholder */
+    .ap-map {
+      background: linear-gradient(135deg, var(--color-gray-100), #e2e8f0);
+      border-radius: var(--radius-lg);
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed var(--color-gray-300);
+      text-align: center;
+      padding: 32px;
+    }
+    .ap-map-pin {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: var(--color-accent);
+    }
+    .ap-map h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .ap-map p {
+      font-size: 0.88rem;
+      color: var(--color-gray-500);
+      margin-bottom: 16px;
+    }
+    .ap-map a {
+      color: var(--color-accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .ap-map a:hover { color: var(--color-primary); }
+
+    @media (max-width: 768px) {
+      .ap-header { padding: 120px 0 56px; }
+      .ap-stats { grid-template-columns: repeat(2, 1fr); }
+      .ap-contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .ap-diff-grid { grid-template-columns: 1fr; }
+      .ap-brand-cards { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- Promo Banner -->
+<div id="promoBanner" class="promo-banner" style="display:none;"></div>
 
 <!-- Navigation -->
 <nav class="navbar" id="navbar">
   <div class="container">
     <a href="index.html" class="nav-logo">
-      <img src="assets/images/logo-icon.jpeg" alt="Tarso Energy" style="height:40px;border-radius:4px;margin-right:8px;">
-      TARSO<span style="color:#E8751A;margin-left:4px;">ENERGY</span>
+      <img src="assets/images/logo-icon.jpeg" alt="Tarso Energy">
+      <span class="logo-text">TARSO<span class="logo-accent">ENERGY</span></span>
     </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="systemes-solaires.html">Systèmes Solaires</a></li>
       <li><a href="stations-portables.html">Stations & Accessoires</a></li>
       <li><a href="anti-insectes.html">Anti-Insectes</a></li>
       <li><a href="a-propos.html" class="active">À Propos</a></li>
-      <li><a href="https://wa.me/23562390888" class="nav-cta" target="_blank">WhatsApp</a></li>
+      <li><a href="https://wa.me/23562390888" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a></li>
     </ul>
   </div>
 </nav>
 <div class="nav-overlay" id="navOverlay"></div>
 
 <!-- Page Header -->
-<section class="page-header">
+<section class="ap-header">
   <div class="container">
-    <div class="breadcrumb">
-      <a href="index.html">Accueil</a> / <span>À Propos</span>
+    <div class="ap-breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span class="sep">/</span>
+      <span class="current">À Propos</span>
     </div>
-    <h1>À Propos & Contact</h1>
-    <p class="page-subtitle">Découvrez qui nous sommes, nos partenaires et comment nous contacter.</p>
+    <h1>À Propos de <span class="accent">TARSO ENERGY</span></h1>
+    <p class="subtitle">Votre partenaire de confiance pour l'énergie solaire et la protection anti-insectes au Tchad. Direct usine, prix transparents, support local.</p>
   </div>
 </section>
 
 <!-- Qui sommes-nous -->
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Qui sommes-nous ?</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>TARSO ENERGY est le représentant officiel des marques <strong>PROTON</strong> (systèmes solaires) et <strong>GLEECON</strong> (anti-insectes écologiques) au Tchad.</p>
-        <p>Basés à N'Djamena, quartier Farcha, nous importons directement des usines — sans intermédiaire — pour offrir les meilleurs prix en FCFA sur des produits neufs, certifiés et garantis.</p>
-        <p>Notre mission : rendre l'énergie solaire accessible à chaque foyer tchadien et protéger les familles contre les moustiques sans produits chimiques dangereux.</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:16px;font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--color-primary);">Qui sommes-nous ?</h2>
+    <div style="max-width:740px;margin:0 auto;">
+      <p style="text-align:center;color:var(--color-gray-500);line-height:1.8;font-size:0.95rem;margin-bottom:12px;">
+        <strong style="color:var(--color-primary);">TARSO ENERGY</strong> est le représentant officiel des marques <strong style="color:var(--color-primary);">PROTON</strong> (systèmes solaires, Shenzhen) et <strong style="color:var(--color-primary);">GLEECON</strong> (anti-insectes écologiques, Zhongshan) au Tchad.
+      </p>
+      <p style="text-align:center;color:var(--color-gray-500);line-height:1.8;font-size:0.95rem;">
+        Basés à N'Djamena, quartier Farcha, nous importons directement des usines — sans intermédiaire — pour offrir les meilleurs prix en FCFA sur des produits neufs, certifiés et garantis. Notre mission : rendre l'énergie solaire accessible à chaque foyer tchadien et protéger les familles contre les moustiques sans produits chimiques.
+      </p>
+    </div>
+    <div class="ap-stats">
+      <div class="ap-stat">
+        <span class="num">2</span>
+        <span class="label">Fabricants partenaires directs</span>
       </div>
-      <div class="about-stats">
-        <div class="stat-card">
-          <span class="stat-number">30+</span>
-          <span class="stat-label">Pays — Présence PROTON mondiale</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number">6 000</span>
-          <span class="stat-label">Cycles — Durée de vie batteries</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number">5 ans</span>
-          <span class="stat-label">Garantie batteries LiFePO4</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number">12 ans</span>
-          <span class="stat-label">Garantie panneaux solaires</span>
-        </div>
+      <div class="ap-stat">
+        <span class="num">30+</span>
+        <span class="label">Pays — présence PROTON mondiale</span>
+      </div>
+      <div class="ap-stat">
+        <span class="num">5</span>
+        <span class="label">Modèles GLEECON disponibles</span>
+      </div>
+      <div class="ap-stat">
+        <span class="num">100%</span>
+        <span class="label">Batteries neuves Classe A</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROTON Section -->
-<section class="section section-proton">
+<section class="ap-brand ap-brand-proton">
   <div class="container">
-    <h2 class="section-title">PROTON — Systèmes Solaires</h2>
-    <div class="brand-content">
-      <div class="brand-text">
-        <p>PROTON est un fabricant chinois de systèmes solaires complets présent dans plus de 30 pays. Spécialisé dans les solutions tout-en-un pour l'Afrique, chaque kit comprend onduleur MPPT, batteries LiFePO4, panneaux monocristallins et tous les accessoires d'installation.</p>
-        <p><strong>Certifications :</strong> CE, ISO 9001, IEC 62619 (batteries), IEC 61215 (panneaux)</p>
+    <span class="ap-brand-label">Partenaire Solaire</span>
+    <h2>PROTON New Energy Technology</h2>
+    <p class="ap-brand-text">
+      Filiale du groupe ATDO, PROTON est un fabricant basé à Shenzhen spécialisé dans les systèmes solaires complets depuis 2016. Avec des usines à Shenzhen, Dongguan (onduleurs), Jiangmen (batteries) et Zhejiang (panneaux), PROTON fabrique et assemble chaque composant. Présent dans plus de 30 pays dont les USA, l'Allemagne, la France, les Émirats, le Cameroun et le Ghana. PROTON a reçu le certificat des Nations Unies lors d'une cérémonie ACAA pour sa contribution à l'ODD 7 — énergie propre et abordable.
+    </p>
+    <div class="ap-brand-cards">
+      <div class="ap-brand-card">
+        <h4>Fabricant, pas revendeur</h4>
+        <p>PROTON fabrique ses onduleurs, batteries et panneaux dans ses propres usines. Compatibilité parfaite, prix direct.</p>
       </div>
-      <div class="brand-features">
-        <div class="feature-card">
-          <h4>Usine intégrée</h4>
-          <p>Production complète : onduleurs, batteries, panneaux. Tout sort de la même usine pour une compatibilité parfaite.</p>
-        </div>
-        <div class="feature-card">
-          <h4>LiFePO4 Classe A</h4>
-          <p>Batteries neuves au Lithium Fer Phosphate. 6 000 cycles. Plus sûres et plus durables que le plomb-acide.</p>
-        </div>
-        <div class="feature-card">
-          <h4>MPPT intégré</h4>
-          <p>Chaque onduleur embarque un régulateur MPPT pour extraire le maximum d'énergie des panneaux solaires.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Panneaux 620W HPBC</h4>
-          <p>Dernière technologie monocristalline. Haute efficacité même par temps couvert. Garantie 12 ans.</p>
-        </div>
+      <div class="ap-brand-card">
+        <h4>Certifié Nations Unies</h4>
+        <p>Cérémonie ACAA des Nations Unies pour la contribution aux Objectifs de Développement Durable — ODD 7, énergie propre.</p>
+      </div>
+      <div class="ap-brand-card">
+        <h4>30+ pays dans le monde</h4>
+        <p>USA, Allemagne, France, Émirats, Inde, Cameroun, Ghana, Afrique du Sud, Kenya, Zambie et bien d'autres.</p>
+      </div>
+      <div class="ap-brand-card">
+        <h4>6 000 cycles LiFePO4</h4>
+        <p>Batteries Lithium Fer Phosphate Classe A : plus de 16 ans d'utilisation quotidienne. Garantie 5 ans fabricant.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GLEECON Section -->
-<section class="section section-gleecon">
+<section class="ap-brand ap-brand-gleecon">
   <div class="container">
-    <h2 class="section-title">GLEECON — Anti-Insectes Écologiques</h2>
-    <div class="brand-content">
-      <div class="brand-text">
-        <p>GLEECON fabrique des appareils anti-insectes écologiques depuis 2005. Certifié ISO 9001, l'entreprise exporte dans plus de 30 pays. Leur technologie UV-A attire les moustiques et insectes nuisibles sans aucun produit chimique.</p>
-        <p><strong>Certifications :</strong> ISO 9001, CE, RoHS</p>
-        <p>Gamme complète : modèles rechargeables USB-C, électriques sur secteur, et 100% solaires pour les zones sans électricité.</p>
+    <span class="ap-brand-label">Partenaire Anti-Insectes</span>
+    <h2>GLEECON — Zhongshan, Chine</h2>
+    <p class="ap-brand-text">
+      Fondée en 2005, GLEECON est un fabricant certifié ISO 9001 et BSCI basé à Zhongshan, Guangdong. Avec une usine de 30 000 m² et une capacité de production de 5 millions d'unités par an, GLEECON est un leader mondial des appareils anti-insectes écologiques. Leurs produits utilisent la technologie UV-A pour attirer et éliminer les moustiques sans aucun produit chimique. TARSO ENERGY est le premier distributeur GLEECON au Tchad.
+    </p>
+    <div class="ap-brand-cards" style="max-width:800px;">
+      <div class="ap-brand-card">
+        <h4>ISO 9001 & BSCI</h4>
+        <p>Double certification qualité et responsabilité sociale. Produits testés et conformes aux standards internationaux.</p>
+      </div>
+      <div class="ap-brand-card">
+        <h4>30 000 m² d'usine</h4>
+        <p>Capacité de production de 5 millions d'unités par an. Recherche et développement intégrés.</p>
+      </div>
+      <div class="ap-brand-card">
+        <h4>Zéro chimique</h4>
+        <p>Technologie UV-A uniquement. Aucun pesticide, aucune fumée, aucun danger pour la santé de votre famille.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Ce qui nous différencie -->
-<section class="section section-alt">
+<section class="section" style="background:var(--color-gray-100);">
   <div class="container">
-    <h2 class="section-title">Ce qui nous différencie</h2>
-    <div class="advantages-grid">
-      <div class="advantage-card">
-        <h3>Direct Usine</h3>
-        <p>Aucun intermédiaire. On importe directement de PROTON et GLEECON. Le vrai prix, sans marge cachée.</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px;font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--color-primary);">Ce qui nous différencie</h2>
+    <div class="ap-diff-grid">
+      <div class="ap-diff-item">
+        <div class="ap-diff-icon">&#9670;</div>
+        <div>
+          <h4>Prix transparents</h4>
+          <p>Tous les prix sont affichés en FCFA. Pas de négociation, pas de surprise. Ce que vous voyez, c'est ce que vous payez.</p>
+        </div>
       </div>
-      <div class="advantage-card">
-        <h3>Prix Transparents</h3>
-        <p>Tous les prix sont affichés en FCFA. Pas de négociation, pas de surprise. Ce que vous voyez, c'est ce que vous payez.</p>
+      <div class="ap-diff-item">
+        <div class="ap-diff-icon">&#9670;</div>
+        <div>
+          <h4>Direct usine</h4>
+          <p>Aucun intermédiaire. On importe directement de PROTON et GLEECON. Le vrai prix, sans marge cachée de revendeur.</p>
+        </div>
       </div>
-      <div class="advantage-card">
-        <h3>Produits Neufs Certifiés</h3>
-        <p>Tout est neuf, Classe A, sorti d'usine. Jamais de reconditionné. Certifications internationales sur chaque produit.</p>
+      <div class="ap-diff-item">
+        <div class="ap-diff-icon">&#9670;</div>
+        <div>
+          <h4>Classe A uniquement</h4>
+          <p>Toutes nos batteries LiFePO4 sont neuves, Classe A, jamais reconditionnées. Certains concurrents vendent du Classe B ou de l'occasion.</p>
+        </div>
       </div>
-      <div class="advantage-card">
-        <h3>Garantie Réelle</h3>
-        <p>5 ans sur les batteries, 12 ans sur les panneaux. Pas une promesse en l'air — une garantie usine.</p>
+      <div class="ap-diff-item">
+        <div class="ap-diff-icon">&#9670;</div>
+        <div>
+          <h4>Support local</h4>
+          <p>Basés à N'Djamena, quartier Farcha. On est là pour le conseil, la livraison, l'installation et le service après-vente.</p>
+        </div>
       </div>
-      <div class="advantage-card">
-        <h3>Conseil Personnalisé</h3>
-        <p>Envoyez-nous la liste de vos appareils. On calcule gratuitement le système adapté à vos besoins réels.</p>
+      <div class="ap-diff-item">
+        <div class="ap-diff-icon">&#9670;</div>
+        <div>
+          <h4>Garantie fabricant</h4>
+          <p>5 ans sur les batteries, 12 ans sur les panneaux solaires. Pas une promesse en l'air — une garantie usine réelle.</p>
+        </div>
       </div>
-      <div class="advantage-card">
-        <h3>Présence Locale</h3>
-        <p>Basés à N'Djamena, quartier Farcha. On est là pour le conseil, la livraison et le service après-vente.</p>
+      <div class="ap-diff-item">
+        <div class="ap-diff-icon">&#9670;</div>
+        <div>
+          <h4>Écologique</h4>
+          <p>Énergie solaire propre et anti-insectes sans chimique. Zéro émission, zéro poison, zéro bruit. Bon pour la planète et votre famille.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -157,70 +565,121 @@
 <!-- Contact Section -->
 <section class="section" id="contact">
   <div class="container">
-    <h2 class="section-title">Contactez-nous</h2>
-    <div class="contact-grid">
-      <form class="contact-form" id="contactForm">
-        <div class="form-group">
-          <label for="name">Nom complet</label>
-          <input type="text" id="name" name="name" required placeholder="Votre nom">
-        </div>
-        <div class="form-group">
-          <label for="phone">Téléphone</label>
-          <input type="tel" id="phone" name="phone" required placeholder="+235 ...">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="votre@email.com">
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required placeholder="Décrivez vos besoins..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold">Envoyer</button>
-      </form>
-      <div class="contact-info">
-        <div class="contact-card">
-          <h4>WhatsApp</h4>
-          <p><a href="https://wa.me/23562390888" target="_blank">+235 62 39 08 88</a></p>
-        </div>
-        <div class="contact-card">
-          <h4>Téléphone</h4>
-          <p>+235 66 24 55 97</p>
-        </div>
-        <div class="contact-card">
-          <h4>Email</h4>
-          <p><a href="mailto:contact@tarso.energy">contact@tarso.energy</a></p>
-        </div>
-        <div class="contact-card">
-          <h4>Adresse</h4>
-          <p>Quartier Farcha, N'Djamena, Tchad</p>
-        </div>
-        <div class="contact-card">
-          <h4>Réseaux sociaux</h4>
-          <div class="social-links">
-            <a href="https://www.facebook.com/tarso.energy" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/tarso.energy" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@tarso.energy" target="_blank">TikTok</a>
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px;font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--color-primary);">Contactez-nous</h2>
+    <div class="ap-contact-grid">
+
+      <!-- Form -->
+      <div class="ap-form">
+        <h3>Envoyez-nous un message</h3>
+        <form id="contactForm">
+          <div class="ap-form-group">
+            <label for="name">Nom complet *</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom complet">
+          </div>
+          <div class="ap-form-group">
+            <label for="phone">Téléphone *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+235 ...">
+          </div>
+          <div class="ap-form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com">
+          </div>
+          <div class="ap-form-group">
+            <label for="subject">Sujet</label>
+            <select id="subject" name="subject">
+              <option value="">Choisir un sujet...</option>
+              <option value="prix">Demande de prix</option>
+              <option value="technique">Question technique</option>
+              <option value="commande">Commande</option>
+              <option value="partenariat">Partenariat</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="ap-form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Décrivez vos besoins..."></textarea>
+          </div>
+          <button type="submit" class="ap-form-submit">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.291 0-4.405-.763-6.103-2.048l-.427-.322-2.645.887.887-2.645-.322-.427A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Envoyer sur WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="ap-info-cards">
+        <div class="ap-info-card">
+          <div class="ap-info-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          </div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p><a href="https://wa.me/23562390888" target="_blank">+235 62 39 08 88</a></p>
           </div>
         </div>
-        <div class="contact-card">
-          <h4>Horaires</h4>
-          <p>Lundi — Samedi : 8h — 18h<br>Dimanche : Sur rendez-vous</p>
+        <div class="ap-info-card">
+          <div class="ap-info-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Téléphone</h4>
+            <p>+235 66 24 55 97</p>
+          </div>
+        </div>
+        <div class="ap-info-card">
+          <div class="ap-info-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:contact@tarso.energy">contact@tarso.energy</a></p>
+          </div>
+        </div>
+        <div class="ap-info-card">
+          <div class="ap-info-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Adresse</h4>
+            <p>Quartier Farcha, N'Djamena, Tchad</p>
+          </div>
+        </div>
+        <div class="ap-info-card">
+          <div class="ap-info-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <div>
+            <h4>Réseaux sociaux</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/tarso.energy" target="_blank">Facebook</a>
+              <a href="https://www.instagram.com/tarso.energy" target="_blank">Instagram</a>
+              <a href="https://www.tiktok.com/@tarso.energy" target="_blank">TikTok</a>
+            </div>
+          </div>
+        </div>
+        <div class="ap-info-card">
+          <div class="ap-info-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Horaires</h4>
+            <p>Lun — Sam : 8h — 18h</p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- Map Placeholder -->
-<section class="section section-alt">
+<section class="section" style="background:var(--color-gray-100);padding:48px 0 80px;">
   <div class="container">
-    <h2 class="section-title">Nous trouver</h2>
-    <div class="map-placeholder" style="background:#e2e8f0;border-radius:12px;height:300px;display:flex;align-items:center;justify-content:center;color:#475569;">
-      <p style="text-align:center;">
-        <strong>Quartier Farcha, N'Djamena, Tchad</strong><br>
-        <a href="https://wa.me/23562390888?text=Je%20voudrais%20votre%20localisation%20exacte" target="_blank" style="color:#E8751A;">Demandez la localisation exacte via WhatsApp</a>
-      </p>
+    <div class="ap-map">
+      <div class="ap-map-pin">&#9679;</div>
+      <h3>N'Djamena, Tchad — Quartier Farcha</h3>
+      <p>Carte interactive bientôt disponible. En attendant, demandez-nous la localisation exacte.</p>
+      <a href="https://wa.me/23562390888?text=Bonjour%2C%20je%20voudrais%20votre%20localisation%20exacte" target="_blank">Demander la localisation via WhatsApp</a>
     </div>
   </div>
 </section>
@@ -272,3 +731,29 @@
 
 <script src="assets/js/main.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Contact form -> WhatsApp redirect
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      let text = `Bonjour, je suis ${name}.`;
+      if (phone) text += `\nTél: ${phone}`;
+      if (email) text += `\nEmail: ${email}`;
+      if (subject) text += `\nSujet: ${subject}`;
+      if (message) text += `\n\n${message}`;
+      window.open('https://wa.me/23562390888?text=' + encodeURIComponent(text), '_blank');
+    });
+  }
+  if (typeof TarsoEnergy !== 'undefined' && TarsoEnergy.loadPromoBanner) {
+    TarsoEnergy.loadPromoBanner('promoBanner');
+  }
+});
+</script>
+</body>
+</html>

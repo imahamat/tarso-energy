@@ -4,73 +4,317 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stations Portables & Accessoires — TARSO ENERGY</title>
-  <meta name="description" content="Stations portables PROTON de 100W à 1KW, panneaux pliables et jump starters. Énergie nomade au Tchad. Prix en FCFA.">
+  <meta name="description" content="Stations portables PROTON de 100W à 1KW tout-en-un, panneaux solaires pliables et jump starters. Batteries LiFePO4 rechargeables solaire. Prix en FCFA. N'Djamena, Tchad.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ---- Stations Page Scoped Styles ---- */
+    .sp-header {
+      background: linear-gradient(135deg, #0F1724 0%, #1B2A4A 60%, #243756 100%);
+      padding: 140px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .sp-header::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(232,117,26,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .sp-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+    }
+    .sp-breadcrumb a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sp-breadcrumb a:hover { color: var(--color-accent); }
+    .sp-breadcrumb .sep { color: rgba(255,255,255,0.25); }
+    .sp-breadcrumb .current { color: var(--color-accent); font-weight: 600; }
+    .sp-header h1 {
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+    .sp-header h1 .accent { color: var(--color-accent); }
+    .sp-header .subtitle {
+      color: rgba(255,255,255,0.7);
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    /* Filters */
+    .sp-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 48px 0 8px;
+    }
+    .sp-filter-btn {
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1.5px solid var(--color-gray-200);
+      background: var(--color-white);
+      color: var(--color-gray-600);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-body);
+    }
+    .sp-filter-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    .sp-filter-btn.active {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    /* Section headers */
+    .sp-section-label {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 18px;
+    }
+    .sp-section-label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 4px;
+      height: 28px;
+      background: var(--color-accent);
+      border-radius: 2px;
+    }
+    .sp-section-desc {
+      color: var(--color-gray-500);
+      font-size: 0.95rem;
+      margin-bottom: 36px;
+      padding-left: 18px;
+      max-width: 600px;
+      line-height: 1.65;
+    }
+
+    /* Feature cards row */
+    .sp-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .sp-feature {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      border-left: 4px solid var(--color-accent);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .sp-feature:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .sp-feature h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+    .sp-feature p {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+      line-height: 1.65;
+    }
+
+    /* CTA block */
+    .sp-cta {
+      background: linear-gradient(135deg, #0F1724 0%, #1B2A4A 100%);
+      padding: 88px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sp-cta::before {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(232,117,26,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .sp-cta h2 {
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .sp-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .sp-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--color-accent), #F5A623);
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(232,117,26,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .sp-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(232,117,26,0.5);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .sp-header { padding: 120px 0 56px; }
+      .sp-features { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- Promo Banner -->
+<div id="promoBanner" class="promo-banner" style="display:none;"></div>
 
 <!-- Navigation -->
 <nav class="navbar" id="navbar">
   <div class="container">
     <a href="index.html" class="nav-logo">
-      <img src="assets/images/logo-icon.jpeg" alt="Tarso Energy" style="height:40px;border-radius:4px;margin-right:8px;">
-      TARSO<span style="color:#E8751A;margin-left:4px;">ENERGY</span>
+      <img src="assets/images/logo-icon.jpeg" alt="Tarso Energy">
+      <span class="logo-text">TARSO<span class="logo-accent">ENERGY</span></span>
     </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="systemes-solaires.html">Systèmes Solaires</a></li>
       <li><a href="stations-portables.html" class="active">Stations & Accessoires</a></li>
       <li><a href="anti-insectes.html">Anti-Insectes</a></li>
       <li><a href="a-propos.html">À Propos</a></li>
-      <li><a href="https://wa.me/23562390888" class="nav-cta" target="_blank">WhatsApp</a></li>
+      <li><a href="https://wa.me/23562390888" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a></li>
     </ul>
   </div>
 </nav>
 <div class="nav-overlay" id="navOverlay"></div>
 
 <!-- Page Header -->
-<section class="page-header">
+<section class="sp-header">
   <div class="container">
-    <div class="breadcrumb">
-      <a href="index.html">Accueil</a> / <span>Stations Portables & Accessoires</span>
+    <div class="sp-breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span class="sep">/</span>
+      <span class="current">Stations & Accessoires</span>
     </div>
-    <h1>Stations Portables & Accessoires</h1>
-    <p class="page-subtitle">Énergie nomade PROTON : stations portables rechargeables solaire, panneaux pliables et jump starters pour véhicules. Emportez l'énergie partout.</p>
+    <h1>Stations Portables & Accessoires <span class="accent">PROTON</span></h1>
+    <p class="subtitle">L'electricite portable partout au Tchad. Stations rechargeables solaires de 100W a 1KW, panneaux pliables et jump starters pour vehicules.</p>
   </div>
 </section>
 
-<!-- Filter Tabs -->
+<!-- Filters -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sp-filters">
+      <button class="sp-filter-btn active" data-filter="all">Tous</button>
+      <button class="sp-filter-btn" data-filter="station">Stations</button>
+      <button class="sp-filter-btn" data-filter="tout-en-un">Tout-en-Un</button>
+      <button class="sp-filter-btn" data-filter="panneau">Panneaux</button>
+      <button class="sp-filter-btn" data-filter="jump-starter">Jump Starters</button>
+    </div>
+  </div>
+</section>
+
+<!-- Stations Grid -->
 <section class="section">
   <div class="container">
-    <div class="filter-tabs" id="filterTabs">
-      <button class="filter-tab active" data-filter="all">Tous</button>
-      <button class="filter-tab" data-filter="portable">Stations</button>
-      <button class="filter-tab" data-filter="tout-en-un">Tout-en-Un</button>
-      <button class="filter-tab" data-filter="panneau">Panneaux</button>
-      <button class="filter-tab" data-filter="jump-starter">Jump Starters</button>
-    </div>
-
-    <!-- Stations Products Grid -->
-    <h2 class="section-title" style="margin-top:2rem;">Stations Portables</h2>
+    <h2 class="sp-section-label">Stations Portables</h2>
+    <p class="sp-section-desc">Batteries portables rechargeables au solaire ou sur secteur. De 100W pour le camping a 1KW tout-en-un pour la maison.</p>
     <div id="stationsProducts" class="products-grid"></div>
+  </div>
+</section>
 
-    <!-- Accessories Products Grid -->
-    <h2 class="section-title" style="margin-top:3rem;">Accessoires</h2>
+<!-- Accessories Grid -->
+<section class="section" style="background:var(--color-gray-100);">
+  <div class="container">
+    <h2 class="sp-section-label">Accessoires</h2>
+    <p class="sp-section-desc">Panneaux solaires pliables pour recharger vos stations et jump starters pour demarrer vos vehicules.</p>
     <div id="accessoriesProducts" class="products-grid"></div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section cta-section">
-  <div class="container" style="text-align:center;">
-    <h2>Besoin d'énergie en déplacement ?</h2>
-    <p>Nos stations portables se rechargent au solaire. Idéales pour le camping, les voyages ou comme backup.</p>
-    <a href="https://wa.me/23562390888?text=Je%20suis%20intéressé%20par%20une%20station%20portable" class="btn btn-gold" target="_blank">Commander via WhatsApp</a>
+<!-- Why Portable -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px;font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--color-primary);">Pourquoi choisir le portable ?</h2>
+    <div class="sp-features">
+      <div class="sp-feature">
+        <h3>Rechargeable Solaire</h3>
+        <p>Branchez un panneau pliable PROTON et rechargez n'importe ou. Le soleil du Tchad fait le travail gratuitement.</p>
+      </div>
+      <div class="sp-feature">
+        <h3>Batterie LiFePO4</h3>
+        <p>Les modeles 700W et plus utilisent des batteries LiFePO4 : les plus durables du marche avec 6 000 cycles de charge.</p>
+      </div>
+      <div class="sp-feature">
+        <h3>Sorties Multiples</h3>
+        <p>USB, USB-C, prise AC 220V. Chargez telephone, laptop, lampe, ventilateur, frigo portable ou televiseur.</p>
+      </div>
+      <div class="sp-feature">
+        <h3>Demarrage Vehicule</h3>
+        <p>Nos jump starters demarrent voitures et camions (12V et 24V). Certains incluent un compresseur d'air integre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="sp-cta">
+  <div class="container">
+    <h2>Besoin de conseils ?</h2>
+    <p>Dites-nous ce que vous voulez alimenter. On vous recommande la station et le panneau adaptes a vos besoins.</p>
+    <a href="https://wa.me/23562390888?text=Bonjour%2C%20je%20cherche%20une%20station%20portable%20adapt%C3%A9e%20%C3%A0%20mes%20besoins" class="sp-cta-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.291 0-4.405-.763-6.103-2.048l-.427-.322-2.645.887.887-2.645-.322-.427A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Nous contacter sur WhatsApp
+    </a>
   </div>
 </section>
 
@@ -121,3 +365,16 @@
 
 <script src="assets/js/main.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  TarsoEnergy.loadProducts('portable-stations', [
+    'station-100w.json','station-200w.json','station-1kw-tout-en-un.json'
+  ], 'stationsProducts');
+  TarsoEnergy.loadProducts('accessories', [
+    'panneau-pliable-50w.json','panneau-solaire-200w.json',
+    'jump-starter-12v.json','jump-starter-12-24v.json','jump-starter-pro.json'
+  ], 'accessoriesProducts');
+  TarsoEnergy.loadPromoBanner('promoBanner');
+});
+</script>
+</body>
+</html>
