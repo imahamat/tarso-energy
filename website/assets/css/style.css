@@ -3194,4 +3194,173 @@ img:not([loading="lazy"]) {
   opacity: 1;
 }
 
+/* ---------- 50. Contact Section (ap-* design from À Propos) ---------- */
+
+.ap-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.ap-form {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: var(--shadow-md);
+}
+
+.ap-form h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 28px;
+}
+
+.ap-form-group {
+  margin-bottom: 20px;
+}
+
+.ap-form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.ap-form-group input,
+.ap-form-group select,
+.ap-form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-primary);
+  background: var(--color-gray-100);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.ap-form-group input:focus,
+.ap-form-group select:focus,
+.ap-form-group textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(232, 117, 26, 0.1);
+  background: #fff;
+}
+
+.ap-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.ap-form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--color-accent), #F5A623);
+  color: #fff;
+  padding: 14px 36px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(232, 117, 26, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  justify-content: center;
+}
+
+.ap-form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(232, 117, 26, 0.4);
+}
+
+.ap-info-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.ap-info-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ap-info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.ap-info-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(27, 42, 74, 0.08), rgba(27, 42, 74, 0.03));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.ap-info-card h4 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.ap-info-card p,
+.ap-info-card a {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.ap-info-card a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ap-info-card a:hover {
+  color: var(--color-accent);
+}
+
+.ap-info-card .social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.ap-info-card .social-links a {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .ap-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .ap-form {
+    padding: 28px 20px;
+  }
+}
+
 /* ---------- End of Stylesheet ---------- */

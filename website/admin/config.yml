@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: imahamat/tarso-energy
+  name: git-gateway
   branch: main
 
 media_folder: "website/assets/images/uploads"
