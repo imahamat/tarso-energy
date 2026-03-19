@@ -442,6 +442,35 @@ body {
   padding-top: var(--navbar-height);
 }
 
+/* Premium CSS gradient hero — no image needed */
+.hero-gradient {
+  background: linear-gradient(135deg, #0F1724 0%, #1B2A4A 35%, #2B6CB0 70%, #1B2A4A 100%);
+  background-size: 200% 200%;
+  animation: heroShift 12s ease infinite;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 70% 40%, rgba(232, 117, 26, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(43, 108, 176, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(245, 166, 35, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-gradient .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes heroShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
