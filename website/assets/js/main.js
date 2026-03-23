@@ -41,7 +41,7 @@ const TarsoEnergy = {
       this.initFilters();
       this.initScrollAnimations();
     } catch (e) {
-      container.innerHTML = '<p class="text-center" style="color:var(--color-gray-400)">Chargement des produits...</p>';
+      container.innerHTML = '<p class="text-center" style="color:var(--color-gray-400)">Chargement des produits\u2026</p>';
     }
   },
 
@@ -205,14 +205,14 @@ const TarsoEnergy = {
     if (!hamburger || !navLinks) return;
 
     const open = () => {
-      hamburger.classList.add('active');
+      hamburger.classList.add('open');
       navLinks.classList.add('open');
       if (navOverlay) navOverlay.classList.add('visible');
       document.body.style.overflow = 'hidden';
     };
 
     const close = () => {
-      hamburger.classList.remove('active');
+      hamburger.classList.remove('open');
       navLinks.classList.remove('open');
       if (navOverlay) navOverlay.classList.remove('visible');
       document.body.style.overflow = '';
@@ -459,7 +459,7 @@ const TarsoEnergy = {
      ============================================================== */
 
   initContactForm() {
-    const form = document.getElementById('contact-form');
+    const form = document.getElementById('contactForm');
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
@@ -471,7 +471,7 @@ const TarsoEnergy = {
       const name = form.querySelector('[name="name"]');
       const phone = form.querySelector('[name="phone"]');
       const email = form.querySelector('[name="email"]');
-      const product = form.querySelector('[name="product"]');
+      const subject = form.querySelector('[name="subject"]');
       const message = form.querySelector('[name="message"]');
 
       // Validate required fields
@@ -487,14 +487,21 @@ const TarsoEnergy = {
         hasError = true;
       }
 
-      if (hasError) return;
+      if (hasError) {
+        const firstError = form.querySelector('.form-error');
+        if (firstError) {
+          const field = firstError.parentElement.querySelector('input, textarea, select');
+          if (field) field.focus();
+        }
+        return;
+      }
 
       // Build formatted WhatsApp message
       let msg = 'Bonjour TARSO ENERGY,\n\n';
       if (name && name.value.trim()) msg += `Nom : ${name.value.trim()}\n`;
       if (phone && phone.value.trim()) msg += `Téléphone : ${phone.value.trim()}\n`;
       if (email && email.value.trim()) msg += `Email : ${email.value.trim()}\n`;
-      if (product && product.value) msg += `Produit : ${product.value}\n`;
+      if (subject && subject.value) msg += `Sujet : ${subject.value}\n`;
       if (message && message.value.trim()) msg += `\nMessage :\n${message.value.trim()}`;
 
       const waUrl = `https://wa.me/23562390888?text=${encodeURIComponent(msg)}`;

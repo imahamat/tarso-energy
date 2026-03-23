@@ -5,7 +5,7 @@
    ============================================================ */
 
 /* ---------- 1. Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap');
+/* Fonts loaded via <link> in HTML <head> for faster rendering */
 
 /* ---------- 2. CSS Custom Properties ---------- */
 :root {
@@ -89,6 +89,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(27, 42, 74, 0.1);
 }
 
 body {
@@ -121,6 +122,10 @@ ul, ol {
   list-style: none;
 }
 
+button, a {
+  touch-action: manipulation;
+}
+
 button {
   font-family: inherit;
   cursor: pointer;
@@ -139,6 +144,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
   line-height: 1.2;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 h1 { font-weight: 800; }
@@ -586,6 +592,7 @@ body {
   font-weight: 800;
   color: var(--color-white);
   line-height: 1.2;
+  font-variant-numeric: tabular-nums;
 }
 
 .hero-stat-label {
@@ -1013,6 +1020,7 @@ body {
   font-weight: 700;
   color: var(--color-accent);
   margin-bottom: 16px;
+  font-variant-numeric: tabular-nums;
   display: flex;
   align-items: baseline;
   gap: 4px;
@@ -1097,7 +1105,7 @@ body {
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   white-space: nowrap;
 }
 
@@ -1703,7 +1711,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateX(8px);
-  transition: all var(--transition-base);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   position: relative;
   box-shadow: var(--shadow-md);
 }
@@ -2006,7 +2014,7 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -2619,6 +2627,10 @@ html {
   scroll-padding-top: calc(var(--navbar-height) + 16px);
 }
 
+#produits, #contact, #temoignages, #main {
+  scroll-margin-top: calc(var(--navbar-height) + 16px);
+}
+
 /* ---------- 31. Selection ---------- */
 ::selection {
   background: rgba(232, 117, 26, 0.2);
@@ -2928,7 +2940,7 @@ select:focus-visible {
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-fast);
+  transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
   pointer-events: none;
   z-index: 100;
 }
@@ -2943,7 +2955,7 @@ select:focus-visible {
   border-top-color: var(--color-primary);
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-fast);
+  transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
   pointer-events: none;
   z-index: 100;
 }
@@ -3000,7 +3012,7 @@ select:focus-visible {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-base);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
   z-index: 999;
   box-shadow: var(--shadow-md);
 }
@@ -3037,7 +3049,7 @@ select:focus-visible {
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--color-gray-600);
-  transition: all var(--transition-fast);
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .tag:hover {
@@ -3360,6 +3372,58 @@ img:not([loading="lazy"]) {
   }
   .ap-form {
     padding: 28px 20px;
+  }
+}
+
+/* ---------- Skip Link ---------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-gradient {
+    animation: none;
+    background-size: 100% 100%;
+  }
+
+  .product-card:hover,
+  .category-card:hover {
+    transform: none;
+  }
+
+  .product-card:hover .product-image img,
+  .category-card:hover .category-card-image img {
+    transform: none;
+  }
+
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
