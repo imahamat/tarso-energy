@@ -1,0 +1,17 @@
+{
+  "power": "100W",
+  "price": 44500,
+  "name": "Station Portable 100W",
+  "slug": "station-100w",
+  "battery_capacity": "97.2WH",
+  "price_display": "44 500 FCFA",
+  "image": "/assets/images/uploads/100w.png",
+  "in_stock": true,
+  "description": "Station portable 100W avec batterie 97.2WH. Idéale pour charger téléphones, lampes et petits appareils.",
+  "features": [
+    "Compact et léger",
+    "Sorties USB et AC",
+    "Rechargeable solaire"
+  ],
+  "category": "portable"
+}

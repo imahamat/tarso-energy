@@ -1,11 +1,11 @@
 {
   "power": "1KW",
   "price": 220500,
-  "name": "Station Tout-en-Un 1KW / 1KWH..",
+  "name": "Station Tout-en-Un 1KW / 1KWH",
   "slug": "station-1kw-tout-en-un",
   "battery_capacity": "1KWH",
   "price_display": "220 500 FCFA",
-  "image": "",
+  "image": "/assets/images/uploads/1kwh.jpeg",
   "in_stock": true,
   "description": "Station tout-en-un empilable 1KW avec 1KWH de stockage. Onduleur intégré. Extensible en empilant plusieurs unités.",
   "features": [
